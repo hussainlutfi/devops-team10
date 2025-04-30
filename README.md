@@ -35,3 +35,24 @@ graph TD
     B --> C[Microservice: Core Service]
     C --> D[(Database)]
     C --> E[Logging & Monitoring]
+
+---
+
+## ⚙️ Project Setup & Development Guide
+
+### 🔧 Local Development (Vite)
+```bash
+cd vite-react-app
+npm install
+npm run dev
+```
+> 🧪 Runs your app at: http://localhost:5173
+
+### 🐳 Docker Development
+
+```bash
+docker build -t vite-react-app ./vite-react-app
+docker run -p 3000:80 vite-react-app
+```
+> 🌐 Access your app at: http://localhost:3000
+
