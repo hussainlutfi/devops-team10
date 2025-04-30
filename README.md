@@ -35,6 +35,7 @@ graph TD
     B --> C[Microservice: Core Service]
     C --> D[(Database)]
     C --> E[Logging & Monitoring]
+```
 
 ---
 
