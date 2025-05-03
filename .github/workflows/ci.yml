@@ -28,5 +28,22 @@ jobs:
       - name: 🔍 Lint the code
         run: npm run lint
 
-      - name: 🧪 Run tests
-        run: npm test
+      - name: 🧪 Run tests with JUnit output
+        run: |
+          mkdir -p test-results
+          npm test -- --ci --reporters=default --reporters=jest-junit
+
+      - name: 📤 Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: vite-react-app/test-results/
+
+      # Uncomment below to upload coverage report later
+      # - name: 📤 Upload coverage report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: coverage-report
+      #     path: vite-react-app/coverage/
